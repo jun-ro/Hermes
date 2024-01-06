@@ -13,5 +13,3 @@ Next, open `HermesNew.rbxlx` in Roblox Studio and start the Rojo server:
 ```bash
 rojo serve
 ```
-
-Test
