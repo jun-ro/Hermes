@@ -41,11 +41,14 @@ if mainGui and canActivate then
 end
 
 Buttons.Enter.MouseButton1Click:Connect(function()
-	LogHandler:Log(`Sending GET request to http://localhost:3000/clone?url={Inputs.URL.Text}`)
+
+	local serverHost = require(game:GetService("ServerStorage"):WaitForChild("Hermes.config"))
+
+	LogHandler:Log(`Sending GET request to {serverHost}/clone?url={Inputs.URL.Text}`)
 	LogHandler:NewLine()
 	LogHandler:Log(`Please wait patiently...`)
 
-	local response = HttpService:GetAsync(`http://localhost:3000/clone?url={Inputs.URL.Text}`)
+	local response = HttpService:GetAsync(`{serverHost}/clone?url={Inputs.URL.Text}`)
 
 	-- Parse the JSON response
 	local data = HttpService:JSONDecode(response)
@@ -53,7 +56,7 @@ Buttons.Enter.MouseButton1Click:Connect(function()
 	if data["message"] == "Repository cloned successfully." then
 		LogHandler:NewLine()
 		LogHandler:Log("Successfully Cloned the Repository. Attempting to import data...")
-		local dataResponse = HttpService:GetAsync(`http://localhost:3000/get?repoName={data.repoName}`)
+		local dataResponse = HttpService:GetAsync(`{serverHost}/get?repoName={data.repoName}`)
 		LogHandler:NewLine()
 		LogHandler:Log("")
 		Processor:Process(data.repoName, HttpService:JSONDecode(dataResponse))
