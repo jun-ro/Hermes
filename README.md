@@ -33,4 +33,4 @@ Hermes is a powerful and lightweight tool designed to streamline the synchroniza
 
 ## Credits
 
-[Me](https://github.com/jun-ro)
+- [Me](https://github.com/jun-ro)
