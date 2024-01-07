@@ -41,7 +41,6 @@ if mainGui and canActivate then
 end
 
 Buttons.Enter.MouseButton1Click:Connect(function()
-
 	local serverHost = require(game:GetService("ServerStorage"):WaitForChild("Hermes.config"))
 
 	LogHandler:Log(`Sending GET request to {serverHost}/clone?url={Inputs.URL.Text}`)

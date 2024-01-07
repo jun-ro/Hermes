@@ -14,8 +14,8 @@ function Processor:Process(RepoName: string, dataTable: {})
 	local ScriptTypes = {
 		["Server"] = "Script",
 		["Client"] = "LocalScript",
-		["Module"] = "ModuleScript"
-	 }
+		["Module"] = "ModuleScript",
+	}
 
 	for name, data in pairs(dataTable) do
 		if table.find(ScriptTypes, data.Type) then
