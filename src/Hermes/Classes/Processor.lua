@@ -11,18 +11,15 @@ function Processor:Process(RepoName: string, dataTable: {})
 	ImportFolder.Parent = workspace
 	ImportFolder.Name = RepoName
 
-	local ScriptTypes = { "Server", "Client", "Module" }
+	local ScriptTypes = {
+		["Server"] = "Script",
+		["Client"] = "LocalScript",
+		["Module"] = "ModuleScript"
+	 }
 
 	for name, data in pairs(dataTable) do
 		if table.find(ScriptTypes, data.Type) then
-			local Script
-			if data.Type == "Server" then
-				Script = Instance.new("Script")
-			elseif data.Type == "Client" then
-				Script = Instance.new("LocalScript")
-			elseif data.Type == "Module" then
-				Script = Instance.new("ModuleScript")
-			end
+			local Script = Instance.new(ScriptTypes[data.Type])
 			Script.Parent = ImportFolder
 			Script.Name = name
 			Script.Source = data.Data
