@@ -1,3 +1,6 @@
+# Disclaimer
+
+This tool is still in it's early stages and is yet to be compatible with all roblox instances and objects.
 ![](./assets/HermesBanner.png)
 
 [![forthebadge](https://forthebadge.com/images/featured/featured-built-with-love.svg)](https://forthebadge.com)
@@ -21,7 +24,7 @@ Hermes is a powerful and lightweight tool designed to streamline the synchroniza
 ## Setup
 
 1.  Setup the [Hermes Server Backend](https://github.com/jun-ro/HermesServer) on whatever hosting service you desire, you can even locally host it. 
-2.  Download the .rbxm file from [Releases](https://github.com/jun-ro/Hermes/releases/tag/release) and save it in your ```C:\Users\[username]\AppData\Local\Roblox\Plugins``` folder.
+2.  Download the .rbxmx file from [Releases](https://github.com/jun-ro/Hermes/releases/tag/release) and save it in your ```C:\Users\[username]\AppData\Local\Roblox\Plugins``` folder.
 3.  Make sure you have your own storage repo for all your assets. You can find out how to set one up [here](https://github.com/jun-ro/ExampleHermesStorage)
 
 
